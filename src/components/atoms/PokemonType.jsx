@@ -1,6 +1,6 @@
-import styles from "./TypeSpan.module.css";
+import styles from "./PokemonType.module.css";
 
-function TypeSpan(type, typeImage, color) {
+function PokemonType(type, typeImage, color) {
   return (
     <div className={`${color} ${styles.span}`}>
       <img src={typeImage} alt={type} className={styles.typeImage} />
@@ -9,4 +9,4 @@ function TypeSpan(type, typeImage, color) {
   );
 }
 
-export default TypeSpan;
+export default PokemonType;

@@ -1,0 +1,16 @@
+.header_box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.number {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
