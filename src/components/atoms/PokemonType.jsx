@@ -1,12 +1,8 @@
 import styles from "./PokemonType.module.css";
 
-function PokemonType({ type, typeImage, color }) {
-  return (
-    <div className={`${color} ${styles.span}`}>
-      <img src={typeImage} alt={type} className={styles.typeImage} />
-      <span>{type}</span>;
-    </div>
-  );
+function PokemonType({ type, color }) {
+  console.log(color, "SS");
+  return <span className={`${styles.color} ${styles.span}`}>{type}</span>;
 }
 
 export default PokemonType;

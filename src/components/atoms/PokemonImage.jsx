@@ -1,7 +1,7 @@
 import styles from "./PokemonImage.module.css";
 
-function PokemonImage({ src, alt }) {
-  return <img src={src} alt={alt} className={styles.image} />;
+function PokemonImage({ image, alt }) {
+  return <img src={image} alt={alt} className={styles.image} />;
 }
 
 export default PokemonImage;

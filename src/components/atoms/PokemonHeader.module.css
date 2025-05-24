@@ -1,13 +1,12 @@
-.header_box {
+.header {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .number {
   font-size: 0.9rem;
-  color: #888;
 }
 
 .name {

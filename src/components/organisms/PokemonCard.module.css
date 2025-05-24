@@ -1,0 +1,20 @@
+.card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #99c391;
+  color: #f0fdee;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  max-width: 250px;
+  height: 150px;
+  margin: 20px auto;
+}
+
+.image-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
