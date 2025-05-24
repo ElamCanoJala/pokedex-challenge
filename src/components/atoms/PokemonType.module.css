@@ -1,9 +1,11 @@
-.green {
-  background-color: green;
-}
-.violet {
-  color: rgb(150, 1, 150);
+.type {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  border-radius: 4px;
+  padding: 0.2rem;
+  font-size: 0.7rem;
 }
 .typeImage {
-  width: 10px;
+  width: 1rem;
 }
