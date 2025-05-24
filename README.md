@@ -1,12 +1,38 @@
-# React + Vite
+# Pokedex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![cover](https://raw.githubusercontent.com/ElamCanoJala/pokedex-challenge/main/public/cover.png)
 
-Currently, two official plugins are available:
+<!-- You can access to the deploy site in the followingÑ [Link]() -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Autor
 
-## Expanding the ESLint configuration
+- [Elam Cano](https://www.linkedin.com/in/elam-cano-bb0419239/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies
+
+React, Vite, Javascript
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/ElamCanoJala/pokedex-challenge.git
+cd pokedex-challenge
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3.Start the development server
+
+```bash
+npm run dev
+```
+
+### 4.The app should now be running at: http://localhost:5173
