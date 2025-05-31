@@ -3,10 +3,10 @@ import styles from "./PokemonType.module.css";
 
 function PokemonType({ type, color, img }) {
   return (
-    <div className={styles.type} style={{ backgroundColor: color }}>
+    <li className={styles.type} style={{ backgroundColor: color }}>
       <img src={img} className={styles.typeImage} />
       <span className={color}>{capitalize(type)}</span>
-    </div>
+    </li>
   );
 }
 
