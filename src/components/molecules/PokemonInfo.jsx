@@ -9,10 +9,9 @@ function PokemonInfo({ pokemon }) {
       <PokemonHeader number={pokemon.number} name={pokemon.name} />
       <ul className={styles.types}>
         {pokemon.types.map((type) => {
-          const { color, image } = getTypeStyle(type);
-          console.log(color, image);
+          const { typeColor, image } = getTypeStyle(type);
           return (
-            <PokemonType key={type} type={type} color={color} img={image} />
+            <PokemonType key={type} type={type} color={typeColor} img={image} />
           );
         })}
       </ul>

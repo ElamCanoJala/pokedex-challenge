@@ -6,4 +6,9 @@ function formatPokemon(data) {
     types: data.types.map((t) => t.type.name),
   };
 }
-export default formatPokemon;
+
+function formatPokemonList(pokemonArray) {
+  return pokemonArray.map(formatPokemon);
+}
+
+export { formatPokemon, formatPokemonList };

@@ -2,12 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: #99c391;
   color: #f0fdee;
   border-radius: 0.75rem;
   width: 100%;
   max-width: 21rem;
   height: 12.5rem;
+  /*  flex-basis: clamp(16rem, 25vw, 28rem); */
   box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.15),
     0 0.375rem 0.75rem rgba(0, 0, 0, 0.3);
 }
@@ -17,7 +17,6 @@
 }
 
 .image_container {
-  position: relative;
   width: 100%;
   height: 100%;
   display: flex;

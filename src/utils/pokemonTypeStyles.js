@@ -19,76 +19,94 @@ import fairy from "../assets/types/Fairy.svg";
 
 const typeStyles = {
   normal: {
-    color: "#A8A77A",
+    color: "#B5B9C4",
     image: normal,
+    typeColor: "#9DA0AA",
   },
   fire: {
-    color: "#EE8130",
+    color: "#FFA756",
     image: fire,
+    typeColor: "#FD7D24",
   },
   water: {
-    color: "#6390F0",
+    color: "#58ABF6",
     image: water,
+    typeColor: "#4A90DA",
   },
   electric: {
-    color: "#F7D02C",
+    color: "#F2CB55",
     image: electric,
+    typeColor: "#EED535",
   },
   grass: {
-    color: "#7AC74C",
+    color: "#8BBE8A",
     image: grass,
+    typeColor: "#62B957",
   },
   ice: {
-    color: "#96D9D6",
+    color: "#91D8DF",
     image: ice,
+    typeColor: "#61CEC0",
   },
   fighting: {
-    color: "#C22E28",
+    color: "#EB4971",
     image: fighting,
+    typeColor: "#D04164",
   },
   poison: {
-    color: "#A33EA1",
+    color: "#9F6E97",
     image: poison,
+    typeColor: "#A552CC",
   },
   ground: {
-    color: "#E2BF65",
+    color: "#F78551",
     image: ground,
+    typeColor: "#DD7748",
   },
   flying: {
-    color: "#A98FF3",
+    color: "#BEB9D1",
     image: flying,
+    typeColor: "#748FC9",
   },
   psychic: {
-    color: "#F95587",
+    color: "#FF6568",
     image: psychic,
+    typeColor: "#EA5D60",
   },
   bug: {
-    color: "#A6B91A",
+    color: "#8BD674",
     image: bug,
+    typeColor: "#8CB230",
   },
   rock: {
-    color: "#B6A136",
+    color: "#D4C294",
     image: rock,
+    typeColor: "#BAAB82",
   },
   ghost: {
-    color: "#735797",
+    color: "#8571BE",
     image: ghost,
+    typeColor: "#556AAE",
   },
   dragon: {
-    color: "#6F35FC",
+    color: "#7383B9",
     image: dragon,
+    typeColor: "#0F6AC0",
   },
   dark: {
-    color: "#705746",
+    color: "#6F6E78",
     image: dark,
+    typeColor: "#58575F",
   },
   steel: {
-    color: "#B7B7CE",
+    color: "#4C91B2",
     image: steel,
+    typeColor: "#417D9A",
   },
   fairy: {
-    color: "#D685AD",
+    color: "#EBA8C3",
     image: fairy,
+    typeColor: "#ED6EC7",
   },
 };
 

@@ -1,24 +1,27 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { getPokemon } from "../api/getPokemon.js";
-import formatPokemon from "./utils/formatPokemon.js";
-import PokemonCard from "./components/organisms/Pokemon.Card.jsx";
+import { getFirst10PokemonDetails } from "../api/getPokemon.js";
+import { formatPokemonList } from "./utils/formatPokemon.js";
+import Pokemons from "./components/organisms/Pokemons.jsx";
 
 function App() {
   const [pokemon, setPokemon] = useState(null);
 
   useEffect(() => {
-    async function fetchBulbasaur() {
-      const unformatData = await getPokemon("bulbasaur");
-      const formatedData = formatPokemon(unformatData);
-      setPokemon(formatedData);
+    async function fetchPokemons() {
+      try {
+        const detailedPokemons = await getFirst10PokemonDetails();
+        const formatted = formatPokemonList(detailedPokemons);
+        setPokemon(formatted);
+      } catch (error) {
+        console.error(error);
+      }
     }
-    fetchBulbasaur();
+    fetchPokemons();
   }, []);
-
   return (
     <div className="app_container">
-      {pokemon ? <PokemonCard pokemon={pokemon} /> : <p>Loading...</p>}
+      {pokemon ? <Pokemons pokemons={pokemon} /> : <p>Loading...</p>}
     </div>
   );
 }
