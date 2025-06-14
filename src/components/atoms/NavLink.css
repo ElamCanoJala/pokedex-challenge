@@ -1,7 +1,7 @@
 .nav-link {
-  color: #757575;
+  color: var(--secondary-gray);
   cursor: pointer;
 }
 .nav-link:hover {
-  color: black;
+  color: var(--black);
 }

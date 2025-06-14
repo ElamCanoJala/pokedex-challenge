@@ -1,0 +1,25 @@
+.red-btn {
+  padding: 1rem 4rem;
+  background-color: var(--red);
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--bg-gray);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+.gray-btn {
+  padding: 1rem 4rem;
+  background-color: var(--bg-gray);
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--gray);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.red-btn:hover,
+.gray-btn:hover {
+  transform: scale(1.05);
+}

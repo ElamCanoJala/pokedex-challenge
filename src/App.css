@@ -1,2 +1,7 @@
-.app_container {
+:root {
+  --black: #17171b;
+  --gray: #6f6e78;
+  --secondary-gray: #747476;
+  --red: #ea5d60;
+  --bg-gray: #f2f2f2;
 }
