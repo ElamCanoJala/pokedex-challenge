@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.pokedex-home {
+  font-weight: bold;
+  font-size: clamp(1rem, 1vw + 1rem, 3rem);
+}
