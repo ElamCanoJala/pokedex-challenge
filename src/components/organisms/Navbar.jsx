@@ -1,6 +1,6 @@
+import "./Navbar.css";
 import HomeButton from "../atoms/HomeButton";
 import NavLink from "../atoms/NavLink";
-import "./Navbar.css";
 
 const Navbar = () => {
   return (

@@ -1,10 +1,10 @@
+import "./PokemonType.css";
 import { capitalize } from "../../utils/capitalize";
-import styles from "./PokemonType.module.css";
 
 function PokemonType({ type, color, img }) {
   return (
-    <li className={styles.type} style={{ backgroundColor: color }}>
-      <img src={img} className={styles.typeImage} />
+    <li className="type" style={{ backgroundColor: color }}>
+      <img src={img} className="typeImage" />
       <span className={color}>{capitalize(type)}</span>
     </li>
   );

@@ -1,12 +1,10 @@
-import styles from "./PokemonHeader.module.css";
+import "./PokemonHeader.css";
 
 function PokemonHeader({ number, name }) {
   return (
-    <div className={styles.header}>
-      <p className={styles.pokemonNumber}>
-        #{number.toString().padStart(3, "0")}
-      </p>
-      <h2 className={styles.pokemonName}>{name}</h2>
+    <div className="header">
+      <p className="pokemonNumber">#{number.toString().padStart(3, "0")}</p>
+      <h2 className="pokemonName">{name}</h2>
     </div>
   );
 }

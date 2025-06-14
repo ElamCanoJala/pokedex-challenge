@@ -1,5 +1,6 @@
-import pokedex from "../../assets/pokeball.svg";
 import "./HomeButton.css";
+import pokedex from "../../assets/pokeball.svg";
+
 const HomeButton = () => {
   return (
     <div className="container">

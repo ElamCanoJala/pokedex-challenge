@@ -1,6 +1,6 @@
+import "./PokemonCard.css";
 import PokemonImage from "../atoms/PokemonImage";
 import PokemonInfo from "../molecules/PokemonInfo";
-import styles from "./PokemonCard.module.css";
 import pattern from "../../assets/card-components/Pattern.svg";
 import pokeball from "../../assets/card-components/Pokeball.svg";
 import { getTypeStyle } from "../../utils/getTypeStyle";
@@ -10,14 +10,14 @@ function PokemonCard({ pokemon }) {
   const typeStyle = getTypeStyle(firstType);
 
   return (
-    <div className={styles.card} style={{ backgroundColor: typeStyle.color }}>
-      <div className={styles.info}>
+    <div className="card" style={{ backgroundColor: typeStyle.color }}>
+      <div className="info">
         <img src={pattern} />
         <PokemonInfo pokemon={pokemon} />
       </div>
 
-      <div className={styles.image_container}>
-        <img src={pokeball} className={styles.bg_image} />
+      <div className="image_container">
+        <img src={pokeball} className="bg_image" />
         <PokemonImage image={pokemon.image} alt={pokemon.name} />
       </div>
     </div>
