@@ -1,5 +1,6 @@
 .image {
-  transform: translateX(30%);
-  width: 100%;
-  height: auto;
+  transform: translateX(60%);
+  width: auto;
+  height: 120px;
+  object-fit: contain;
 }

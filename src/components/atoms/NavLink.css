@@ -1,6 +1,7 @@
 .nav-link {
   color: var(--secondary-gray);
   cursor: pointer;
+  text-decoration: none;
 }
 .nav-link:hover {
   color: var(--black);

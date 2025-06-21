@@ -1,7 +1,12 @@
+import { Link } from "react-router-dom";
 import "./NavLink.css";
 
-const NavLink = ({ link }) => {
-  return <p className="nav-link">{link}</p>;
+const NavLink = ({ text, link }) => {
+  return (
+    <Link to={link} className="nav-link">
+      {text}
+    </Link>
+  );
 };
 
 export default NavLink;

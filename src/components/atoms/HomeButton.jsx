@@ -1,12 +1,13 @@
 import "./HomeButton.css";
 import pokedex from "../../assets/pokeball.svg";
+import { Link } from "react-router-dom";
 
 const HomeButton = () => {
   return (
-    <div className="container">
+    <Link to="/" className="home-btn">
       <img src={pokedex} alt="pokedex" />
       <p className="pokedex-home">Pokédex</p>
-    </div>
+    </Link>
   );
 };
 export default HomeButton;

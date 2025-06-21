@@ -1,8 +1,14 @@
-.container {
+.home-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
+  color: var(--black);
 }
+.home-btn:hover {
+  color: var(--gray);
+}
+
 .pokedex-home {
   font-weight: bold;
   font-size: clamp(1rem, 1vw + 1rem, 3rem);
