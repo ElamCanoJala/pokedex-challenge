@@ -4,6 +4,7 @@
   align-items: center;
   padding: 0.5rem 4rem;
   border-bottom: solid 0.2rem #a8a8a8;
+  width: 100%;
 }
 
 .nav-links {
