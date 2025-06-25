@@ -4,6 +4,7 @@ import { formatPokemonList } from "../utils/formatPokemon";
 import Pokemons from "../components/organisms/Pokemons";
 import Navbar from "../components/organisms/Navbar";
 import "./Home.css";
+import SearchBanner from "../components/molecules/SearchBanner";
 
 const Home = () => {
   const [pokemon, setPokemon] = useState(null);
@@ -25,13 +26,10 @@ const Home = () => {
       <header className="header">
         <Navbar />
       </header>
-
+      <SearchBanner />
       <main className="main">
         {pokemon ? <Pokemons pokemons={pokemon} /> : <p>Loading...</p>}
       </main>
-
-      <aside className="sidebar">sidebar</aside>
-
       <footer className="footer">footer</footer>
     </div>
   );

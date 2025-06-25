@@ -6,10 +6,8 @@
   grid-area: main;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  background-color: rgb(94, 63, 63);
-  padding: 5rem;
+.search {
+  grid-area: search;
 }
 
 .footer {
@@ -21,10 +19,10 @@
 .layout-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 300px;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto auto;
   grid-template-areas:
     "header header header header"
-    "main   main   .     sidebar"
+    "search search search search"
+    "main   main   main   main"
     "footer footer footer footer";
-  min-height: 100vh;
 }
