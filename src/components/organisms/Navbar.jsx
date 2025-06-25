@@ -4,7 +4,7 @@ import NavLink from "../atoms/NavLink";
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
+    <nav className="header navbar">
       <HomeButton />
       <div className="nav-links">
         <NavLink text="Home" link={"/"} />

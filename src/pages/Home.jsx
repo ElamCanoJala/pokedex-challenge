@@ -23,9 +23,7 @@ const Home = () => {
   }, []);
   return (
     <div className="layout-grid">
-      <header className="header">
-        <Navbar />
-      </header>
+      <Navbar />
       <SearchBanner />
       <main className="main">
         {pokemon ? <Pokemons pokemons={pokemon} /> : <p>Loading...</p>}
