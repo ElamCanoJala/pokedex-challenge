@@ -1,12 +1,13 @@
 import "./SearchBanner.css";
 
-const SearchBanner = () => {
+const SearchBanner = ({ onSearch }) => {
   return (
     <div className="search search-banner">
       <input
         type="text"
         placeholder="What pokemon are you looking for?"
         className="input-banner"
+        onChange={(e) => onSearch(e.target.value)}
       />
     </div>
   );
