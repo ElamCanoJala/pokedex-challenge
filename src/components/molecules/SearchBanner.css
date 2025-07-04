@@ -4,7 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 4rem;
 }
 
 .input-banner {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 50%;
+  border: 1px solid #ccc;
 }

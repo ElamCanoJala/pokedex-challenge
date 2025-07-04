@@ -21,8 +21,11 @@ function PokemonCard({ pokemon }) {
         <PokemonInfo pokemon={pokemon} />
       </div>
 
-      <div className="image_container">
-        <img src={pokeball} className="bg_image" />
+      <div className="image-container">
+        <div className="bg-image-container">
+          <img src={pokeball} />
+        </div>
+
         <PokemonImage image={pokemon.image} alt={pokemon.name} />
       </div>
     </Link>

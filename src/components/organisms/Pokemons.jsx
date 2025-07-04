@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { getPokemonDetailsBatch } from "../../../api/getPokemon";
 import { formatPokemonList } from "../../utils/formatPokemon";
 import PokemonCard from "./PokemonCard";
@@ -11,37 +11,50 @@ function Pokemons() {
   const LOAD_MORE_LIMIT = 25;
 
   const [pokemons, setPokemons] = useState([]);
-  const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchPokemon, setSearchPokemon] = useState("");
+  const isFetchingRef = useRef(false);
+  const offsetRef = useRef(0);
 
   const loadPokemons = useCallback(async () => {
-    if (loading) return;
+    if (isFetchingRef.current) return;
 
+    isFetchingRef.current = true;
     setLoading(true);
+
     try {
-      const limit = offset === 0 ? INITIAL_LIMIT : LOAD_MORE_LIMIT;
-      const data = await getPokemonDetailsBatch(limit, offset);
+      const currentOffset = offsetRef.current;
+      const limit = currentOffset === 0 ? INITIAL_LIMIT : LOAD_MORE_LIMIT;
+
+      const data = await getPokemonDetailsBatch(limit, currentOffset);
       const formatted = formatPokemonList(data);
+
       setPokemons((prev) => [...prev, ...formatted]);
-      setOffset((prev) => prev + limit);
+      offsetRef.current += limit;
     } catch (error) {
       console.error("Error loading pokemons:", error);
     }
-    setLoading(false);
-  }, [offset, loading]);
 
-  useEffect(() => {
-    loadPokemons(); //precarga de primeros 30 pokemones
+    setLoading(false);
+    isFetchingRef.current = false;
   }, []);
 
+  //First render
+  useEffect(() => {
+    if (!isFetchingRef.current) {
+      loadPokemons();
+      isFetchingRef.current = true;
+    }
+  }, []);
+
+  //Load pokemons on scroll
   useEffect(() => {
     function handleScroll() {
       const scrollHeight = document.documentElement.scrollHeight;
       const scrollTop = document.documentElement.scrollTop;
       const clientHeight = document.documentElement.clientHeight;
 
-      if (scrollTop + clientHeight >= scrollHeight - 100) {
+      if (!loading && scrollTop + clientHeight >= scrollHeight - 100) {
         loadPokemons();
       }
     }
@@ -50,12 +63,16 @@ function Pokemons() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [loadPokemons]);
 
+  const filteredPokemons = pokemons.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchPokemon.toLowerCase())
+  );
+  console.log("length", pokemons.length);
   return (
     <div className="pokemons-container">
-      <SearchBanner onSearch={setSearchTerm} />
+      <SearchBanner onSearch={setSearchPokemon} />
       <div className="pokemons-inner-container">
-        {pokemons.map((pokemon) => (
-          <PokemonCard pokemon={pokemon} key={pokemon.number} />
+        {filteredPokemons.map((pokemon, index) => (
+          <PokemonCard pokemon={pokemon} key={index} />
         ))}
       </div>
 

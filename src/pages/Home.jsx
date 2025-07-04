@@ -5,7 +5,10 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="layout-grid">
-      <Navbar />
+      <header className="header">
+        <Navbar />
+      </header>
+
       <main className="main">
         <Pokemons />
       </main>
