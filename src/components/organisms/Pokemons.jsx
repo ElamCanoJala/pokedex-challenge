@@ -66,7 +66,7 @@ function Pokemons() {
   const filteredPokemons = pokemons.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(searchPokemon.toLowerCase())
   );
-  console.log("length", pokemons.length);
+  //console.log("length", pokemons.length);
   return (
     <div className="pokemons-container">
       <SearchBanner onSearch={setSearchPokemon} />
@@ -77,7 +77,7 @@ function Pokemons() {
       </div>
 
       <div className="loading">
-        <img src={pockeball} alt="pockeball" />{" "}
+        <img src={pockeball} alt="pockeball" />
         {loading && <p className="loading-p">Loading pokemons...</p>}
       </div>
     </div>
