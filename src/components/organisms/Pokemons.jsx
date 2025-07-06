@@ -2,9 +2,9 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { getPokemonDetailsBatch } from "../../../api/getPokemon";
 import { formatPokemonList } from "../../utils/formatPokemon";
 import PokemonCard from "./PokemonCard";
-import "./Pokemons.css";
-import pockeball from "../../assets/pokeball.svg";
 import SearchBanner from "../molecules/SearchBanner";
+import "./Pokemons.css";
+import Loading from "../atoms/Loading";
 
 function Pokemons() {
   const INITIAL_LIMIT = 30;
@@ -75,11 +75,7 @@ function Pokemons() {
           <PokemonCard pokemon={pokemon} key={index} />
         ))}
       </div>
-
-      <div className="loading">
-        <img src={pockeball} alt="pockeball" />
-        {loading && <p className="loading-p">Loading pokemons...</p>}
-      </div>
+      {loading && <Loading />}
     </div>
   );
 }

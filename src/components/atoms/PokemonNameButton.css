@@ -1,4 +1,12 @@
 .button-name {
   padding: 1rem;
   background-color: var(--red);
+  color: aliceblue;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.button-name:hover {
+  background-color: #d82121;
 }

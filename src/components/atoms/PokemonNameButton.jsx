@@ -1,9 +1,9 @@
 import "./PokemonNameButton.css";
 
-const PokemonNameButton = ({ text, action }) => {
+const PokemonNameButton = ({ name, onClick }) => {
   return (
-    <button onClick={action} className="button-name">
-      {text}
+    <button onClick={onClick} className="button-name">
+      {name}
     </button>
   );
 };

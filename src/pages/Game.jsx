@@ -1,6 +1,9 @@
 import { useState } from "react";
 import Navbar from "../components/organisms/Navbar";
 import "./Game.css";
+import PokemonCardGame from "../components/organisms/PokemonCardGame";
+import ScoreModal from "../components/organisms/ScoreModal";
+import LanguageSelector from "../components/molecules/LanguageSelector";
 
 const Game = () => {
   const [selectedLang, setSelectedLang] = useState("en");
@@ -29,6 +32,7 @@ const Game = () => {
 
   return (
     <div className="app">
+      <Navbar />
       <LanguageSelector
         selectedLang={selectedLang}
         onSelect={setSelectedLang}
