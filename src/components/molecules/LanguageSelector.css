@@ -1,0 +1,9 @@
+.language-selector {
+  display: flex;
+  gap: 2rem;
+  background-color: var(--red);
+  padding: 2rem;
+}
+.language-selector img {
+  width: 10%;
+}

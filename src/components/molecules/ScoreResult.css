@@ -1,0 +1,13 @@
+.score {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--red);
+  font-size: xx-large;
+}
+.score-p {
+  color: var(--black);
+  font-size: large;
+}
