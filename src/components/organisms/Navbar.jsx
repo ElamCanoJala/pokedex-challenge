@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar">
       <HomeButton />
       <div className="nav-links">
-        <NavLink text="Home" link={"/"} />
+        <NavLink text="Game" link={"/game"} />
         <NavLink text="Types" link={"/types"} />
         <NavLink text="Generations" link={"/generations"} />
       </div>
