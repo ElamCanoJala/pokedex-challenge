@@ -1,5 +1,4 @@
 import Pokemons from "../components/organisms/Pokemons";
-import Navbar from "../components/organisms/Navbar";
 import "./Home.css";
 
 const Home = () => {
@@ -8,11 +7,12 @@ const Home = () => {
       <header className="header">
         <Navbar />
       </header>
-
       <main className="main">
-        <Pokemons />
+        <Outlet />
       </main>
-      <footer className="footer">footer</footer>
+      <footer className="footer">
+        <Footer />
+      </footer>
     </div>
   );
 };

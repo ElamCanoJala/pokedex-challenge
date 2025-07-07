@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "../components/organisms/Navbar";
 import "./Game.css";
 import PokemonCardGame from "../components/organisms/PokemonCardGame";
 import LanguageSelector from "../components/molecules/LanguageSelector";
@@ -28,7 +27,6 @@ const Game = () => {
 
   return (
     <div className="game-container">
-      <Navbar />
       <LanguageSelector
         selectedLang={selectedLang}
         onSelect={setSelectedLang}
