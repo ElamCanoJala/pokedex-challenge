@@ -17,13 +17,13 @@ function PokemonCard({ pokemon }) {
       style={{ backgroundColor: typeStyle.color }}
     >
       <div className="info">
-        <img src={pattern} />
+        <img src={pattern} alt="pattern" />
         <PokemonInfo pokemon={pokemon} />
       </div>
 
       <div className="image-container">
         <div className="bg-image-container">
-          <img src={pokeball} />
+          <img src={pokeball} alt="bg-pokeball" />
         </div>
 
         <PokemonImage image={pokemon.image} alt={pokemon.name} />

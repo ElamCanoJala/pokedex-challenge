@@ -1,10 +1,10 @@
 import { useEffect, useState, useCallback, useRef } from "react";
-import { getPokemonDetailsBatch } from "../../../api/getPokemon";
-import { formatPokemonList } from "../../utils/formatPokemon";
-import PokemonCard from "./PokemonCard";
-import SearchBanner from "../molecules/SearchBanner";
+import { getPokemonDetailsBatch } from "../../api/getPokemon";
+import { formatPokemonList } from "../utils/formatPokemon";
+import PokemonCard from "../components/organisms/PokemonCard";
+import SearchBanner from "../components/molecules/SearchBanner";
 import "./Pokemons.css";
-import Loading from "../atoms/Loading";
+import Loading from "../components/atoms/Loading";
 
 function Pokemons() {
   const INITIAL_LIMIT = 30;
@@ -66,14 +66,19 @@ function Pokemons() {
   const filteredPokemons = pokemons.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(searchPokemon.toLowerCase())
   );
+
   //console.log("length", pokemons.length);
   return (
     <div className="pokemons-container">
       <SearchBanner onSearch={setSearchPokemon} />
       <div className="pokemons-inner-container">
-        {filteredPokemons.map((pokemon, index) => (
-          <PokemonCard pokemon={pokemon} key={index} />
-        ))}
+        {filteredPokemons.length === 0 && pokemons.length !== 0 ? (
+          <p className="not-found">No pokemons found with that name</p>
+        ) : (
+          filteredPokemons.map((pokemon, index) => (
+            <PokemonCard pokemon={pokemon} key={index} />
+          ))
+        )}
       </div>
       {loading && <Loading />}
     </div>

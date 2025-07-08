@@ -11,3 +11,7 @@
   justify-content: center;
   padding: 1rem;
 }
+.not-found {
+  color: var(--red);
+  font-size: larger;
+}

@@ -2,3 +2,8 @@
   display: flex;
   gap: 0.5rem;
 }
+.loading-container {
+  display: flex;
+  align-items: center;
+  min-height: 300px;
+}

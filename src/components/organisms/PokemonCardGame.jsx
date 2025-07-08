@@ -27,30 +27,37 @@ const PokemonCardGame = ({ language, onCorrect, onWrong }) => {
     }, 1000);
   };
 
-  if (loading) return <Loading />;
+  //if (loading) return <Loading />;
 
   return (
-    <div className="pokemon-card">
-      <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
-        alt="Who's that Pokémon?"
-        style={{
-          filter: revealed ? "none" : "brightness(0) contrast(0)",
-          transition: "filter 0.5s ease",
-        }}
-        width="300"
-      />
-      <div className="options">
-        {options.map((opt) => (
-          <PokemonNameButton
-            key={opt.id}
-            onClick={() => handleClick(opt.name)}
-            name={opt.name}
+    <>
+      {loading ? (
+        <div className="loading-container">
+          <Loading />
+        </div>
+      ) : (
+        <>
+          <img
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
+            alt="Who's that Pokémon?"
+            style={{
+              filter: revealed ? "none" : "brightness(0) contrast(0)",
+              transition: "filter 0.5s ease",
+            }}
+            width="300"
           />
-        ))}
-      </div>
-    </div>
+          <div className="options">
+            {options.map((opt) => (
+              <PokemonNameButton
+                key={opt.id}
+                onClick={() => handleClick(opt.name)}
+                name={opt.name}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </>
   );
 };
-
 export default PokemonCardGame;
