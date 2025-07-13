@@ -13,6 +13,7 @@ function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchPokemon, setSearchPokemon] = useState("");
+  const [range, setRange] = useState({ from: 0, to: 30 });
   const isFetchingRef = useRef(false);
   const offsetRef = useRef(0);
 
@@ -29,7 +30,22 @@ function Pokemons() {
       const data = await getPokemonDetailsBatch(limit, currentOffset);
       const formatted = formatPokemonList(data);
 
-      setPokemons((prev) => [...prev, ...formatted]);
+      setPokemons((prev) => {
+        const updated = [...prev, ...formatted];
+
+        // Actualizar el rango solo si no hay búsqueda activa
+        if (searchPokemon.trim() === "") {
+          setRange((prevRange) => {
+            const newMax = updated.length - 1;
+            return {
+              from: prevRange.from,
+              to: Math.max(prevRange.to, newMax),
+            };
+          });
+        }
+
+        return updated;
+      });
       offsetRef.current += limit;
     } catch (error) {
       console.error("Error loading pokemons:", error);
@@ -61,21 +77,41 @@ function Pokemons() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [loadPokemons]);
+  }, [loadPokemons, loading]);
 
   const filteredPokemons = pokemons.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(searchPokemon.toLowerCase())
   );
 
-  //console.log("length", pokemons.length);
+  //Load pokemon on range selected
+  useEffect(() => {
+    if (filteredPokemons.length > 0) {
+      setRange((prevRange) => {
+        const max = filteredPokemons.length - 1;
+
+        if (prevRange.to > max || prevRange.from > max) {
+          return { from: 0, to: max };
+        }
+
+        return prevRange;
+      });
+    }
+  }, [filteredPokemons]);
+
+  const displayedPokemons = filteredPokemons.slice(range.from, range.to + 1);
   return (
     <div className="pokemons-container">
-      <SearchBanner onSearch={setSearchPokemon} />
+      <SearchBanner
+        onSearch={setSearchPokemon}
+        range={range}
+        setRange={setRange}
+        filteredPokemons={filteredPokemons}
+      />
       <div className="pokemons-inner-container">
-        {filteredPokemons.length === 0 && pokemons.length !== 0 ? (
+        {displayedPokemons.length === 0 && pokemons.length !== 0 ? (
           <p className="not-found">No pokemons found with that name</p>
         ) : (
-          filteredPokemons.map((pokemon, index) => (
+          displayedPokemons.map((pokemon, index) => (
             <PokemonCard pokemon={pokemon} key={index} />
           ))
         )}

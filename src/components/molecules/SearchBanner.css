@@ -2,6 +2,8 @@
   width: 100%;
   background-color: var(--red);
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
   padding: 4rem;
@@ -12,4 +14,15 @@
   border-radius: 0.5rem;
   width: 50%;
   border: 1px solid #ccc;
+}
+
+.range-controls {
+  color: var(--bg-gray);
+  display: flex;
+  gap: 2rem;
+}
+
+.range-labels {
+  display: flex;
+  gap: 1rem;
 }
