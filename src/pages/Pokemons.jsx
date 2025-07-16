@@ -5,17 +5,19 @@ import PokemonCard from "../components/organisms/PokemonCard";
 import SearchBanner from "../components/molecules/SearchBanner";
 import "./Pokemons.css";
 import Loading from "../components/atoms/Loading";
+import { useLoaderData } from "react-router-dom";
 
 function Pokemons() {
   const INITIAL_LIMIT = 30;
   const LOAD_MORE_LIMIT = 25;
+  const { pokemons: initialPokemons, offset: initialOffset } = useLoaderData();
 
-  const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState(initialPokemons);
   const [loading, setLoading] = useState(false);
   const [searchPokemon, setSearchPokemon] = useState("");
   const [range, setRange] = useState({ from: 0, to: 30 });
   const isFetchingRef = useRef(false);
-  const offsetRef = useRef(0);
+  const offsetRef = useRef(initialOffset);
 
   const loadPokemons = useCallback(async () => {
     if (isFetchingRef.current) return;
@@ -56,13 +58,13 @@ function Pokemons() {
   }, []);
 
   //First render
-  useEffect(() => {
-    if (!isFetchingRef.current) {
-      loadPokemons();
-      isFetchingRef.current = true;
-    }
-  }, []);
-
+  // useEffect(() => {
+  //   if (!isFetchingRef.current) {
+  //     loadPokemons();
+  //     isFetchingRef.current = true;
+  //   }
+  // }, []);
+  console.log(pokemons, "SSS");
   //Load pokemons on scroll
   useEffect(() => {
     function handleScroll() {
