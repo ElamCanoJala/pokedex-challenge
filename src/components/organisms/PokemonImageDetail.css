@@ -1,0 +1,13 @@
+.image-container-detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pokemon-image {
+  width: 70%;
+}
+.btn-container {
+  display: flex;
+  gap: 3rem;
+}

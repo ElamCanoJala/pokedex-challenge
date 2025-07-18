@@ -1,0 +1,10 @@
+.pokemon-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.pokemon-detail > * {
+  flex: 1;
+  padding: 2rem;
+  box-sizing: border-box;
+}
