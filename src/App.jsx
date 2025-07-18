@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import Loading from "./components/atoms/Loading.jsx";
+import PokemonDetail from "./pages/PokemonDetail.jsx";
 
 const Layout = lazy(() => import("./Layout.jsx"));
 const Pokemons = lazy(() => import("./pages/Pokemons.jsx"));
@@ -16,6 +17,7 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Pokemons />} />
             <Route path="/game" element={<Game />} />
+            <Route path="/pokemon/:name" element={<PokemonDetail />} />
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>

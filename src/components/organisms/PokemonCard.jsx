@@ -12,7 +12,7 @@ function PokemonCard({ pokemon }) {
 
   return (
     <Link
-      to={`/${pokemon.number}`}
+      to={`/pokemon/${pokemon.name}`}
       className="card"
       style={{ backgroundColor: typeStyle.color }}
     >
