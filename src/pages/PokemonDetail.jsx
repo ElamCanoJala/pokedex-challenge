@@ -28,7 +28,7 @@ const PokemonDetail = () => {
   const firstType = pokemon.types[0];
   const color = firstType.type.name;
   const typeStyle = getTypeStyle(color);
-
+  console.log(pokemon, "ASDAD");
   return (
     <div className="pokemon-detail">
       <PokemonStats pokemon={pokemon} />

@@ -20,12 +20,12 @@ const PokemonImageDetail = ({ image, number, name, color = "#000" }) => {
       )}
       <div className="btn-container">
         <ButtonAction
-          text={`Previous #${number - 1}`}
+          text={`Previous #${(number - 1).toString().padStart(3, "0")}`}
           action={handlePrevClick}
-          style="gray-btn"
+          style={`${number <= 1 && "disabled"} gray-btn`}
         />
         <ButtonAction
-          text={`Previous #${number + 1}`}
+          text={`Next #${(number + 1).toString().padStart(3, "0")}`}
           action={handleNextClick}
           style="red-btn"
         />

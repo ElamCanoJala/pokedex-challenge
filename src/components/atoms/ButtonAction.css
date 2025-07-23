@@ -23,3 +23,15 @@
 .gray-btn:hover {
   transform: scale(1.05);
 }
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  padding: 1rem 4rem;
+  background-color: var(--bg-gray);
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--gray);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+  transition: 200ms ease-in-out;
+}

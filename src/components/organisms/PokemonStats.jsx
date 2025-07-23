@@ -1,12 +1,12 @@
+import "./PokemonStats.css";
 const PokemonStats = ({ pokemon }) => {
-  return <div>s</div>;
+  return (
+    <div className="stats-container">
+      <h3>#{pokemon.id.toString().padStart(3, "0")}</h3>
+      <h1>{pokemon.name}</h1>
+      <div></div>
+    </div>
+  );
 };
 
 export default PokemonStats;
-{
-  /* <h1>{pokemon.name}</h1>
-      <img src={pokemon.sprites?.front_default} alt={pokemon.name} />
-      <p>ID: {pokemon.id}</p>
-      <p>Altura: {pokemon.height}</p>
-      <p>Peso: {pokemon.weight}</p> */
-}
