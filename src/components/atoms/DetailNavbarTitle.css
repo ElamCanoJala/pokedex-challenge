@@ -1,3 +1,12 @@
+.title-navbar {
+  all: unset;
+  cursor: pointer;
+  border-bottom: 2px solid var(--gray);
+  padding: 0 3rem;
+  color: var(--gray);
+  font-weight: 600;
+}
 .selectedTitle {
-  border: 2px solid var(--red);
+  border-bottom: 2px solid var(--red);
+  color: var(--red);
 }

@@ -1,12 +1,17 @@
 import "./DetailNavbarTitle.css";
-const DetailNavbarTitle = ({ text, isSelected, setSelected }) => {
+
+const DetailNavbarTitle = ({ name, text, selected, setSelected }) => {
+  function handleClick() {
+    setSelected(name);
+  }
+
   return (
-    <p
-      className={`${isSelected && "selectedTitle"} title-navbar`}
-      onClick={setSelected}
+    <button
+      className={`title-navbar ${selected ? "selectedTitle" : ""}`}
+      onClick={handleClick}
     >
       {text}
-    </p>
+    </button>
   );
 };
 

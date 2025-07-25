@@ -1,5 +1,6 @@
 .detail-navbar {
   display: flex;
+  margin-top: 1rem;
 }
 .title-navbar {
   border-bottom: 2px solid var(--gray);
