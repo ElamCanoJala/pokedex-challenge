@@ -1,6 +1,7 @@
 .detail-navbar {
   display: flex;
   margin-top: 1rem;
+  width: 100%;
 }
 .title-navbar {
   border-bottom: 2px solid var(--gray);

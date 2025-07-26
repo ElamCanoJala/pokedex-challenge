@@ -4,7 +4,7 @@ import TypeIcon from "../atoms/TypeIcon";
 import DetailSection from "./DetailSection";
 import "./PokemonStats.css";
 
-const PokemonStats = ({ pokemon }) => {
+const PokemonStatsDetail = ({ pokemon }) => {
   return (
     <div className="stats-container">
       <h3 className="poke-number">#{pokemon.id.toString().padStart(3, "0")}</h3>
@@ -15,9 +15,9 @@ const PokemonStats = ({ pokemon }) => {
           return <TypeIcon color={typeColor} img={image} key={element.type} />;
         })}
       </ul>
-      <DetailSection />
+      <DetailSection pokemon={pokemon} />
     </div>
   );
 };
 
-export default PokemonStats;
+export default PokemonStatsDetail;

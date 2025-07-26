@@ -1,0 +1,9 @@
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.info-title {
+  color: black;
+  font-weight: 600;
+}

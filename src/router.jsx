@@ -40,7 +40,7 @@ const router = createBrowserRouter([
     },
   },
   {
-    path: "/pokemon/:number",
+    path: "/pokemons/:number",
     lazy: async () => {
       const [{ default: Layout }, { default: PokemonDetail }] =
         await Promise.all([

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../components/atoms/Loading";
 import { getPokemonDetail } from "../../api/getPokemon";
-import PokemonStats from "../components/organisms/PokemonStats";
+import PokemonStatsDetail from "../components/organisms/PokemonStatsDetail";
 import PokemonImageDetail from "../components/organisms/PokemonImageDetail";
 import "./PokemonDetail.css";
 import { getTypeStyle } from "../utils/getTypeStyle";
@@ -31,7 +31,7 @@ const PokemonDetail = () => {
 
   return (
     <div className="pokemon-detail">
-      <PokemonStats pokemon={pokemon} />
+      <PokemonStatsDetail pokemon={pokemon} />
       <PokemonImageDetail
         image={pokemon.sprites?.front_default}
         number={pokemon.id}

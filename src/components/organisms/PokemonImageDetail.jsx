@@ -6,10 +6,10 @@ import Loading from "../atoms/Loading";
 const PokemonImageDetail = ({ image, number, name, color = "#000" }) => {
   const navigate = useNavigate();
   const handlePrevClick = () => {
-    navigate(`/pokemon/${number - 1}`);
+    navigate(`/pokemons/${number - 1}`);
   };
   const handleNextClick = () => {
-    navigate(`/pokemon/${number + 1}`);
+    navigate(`/pokemons/${number + 1}`);
   };
   return (
     <div className="image-container-detail" style={{ backgroundColor: color }}>
