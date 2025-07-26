@@ -1,19 +1,13 @@
-export async function getPokemonSpecies(speciesUrl) {
-  const speciesRes = await fetch(speciesUrl);
-  const speciesData = await speciesRes.json();
-
-  const flavorText = speciesData.flavor_text_entries.find(
-    (entry) => entry.language.name === "en"
-  );
-
-  const genus = speciesData.genera.find(
-    (entry) => entry.language.name === "en"
-  );
+export const getPokemonSpecies = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
 
   return {
-    description: flavorText?.flavor_text.replace(/\f/, " "),
-    genus: genus?.genus,
-    habitat: speciesData.habitat?.name,
-    color: speciesData.color.name,
+    description: data.flavor_text_entries
+      .find((entry) => entry.language.name === "en")
+      ?.flavor_text.replace(/\f/g, " "),
+    genus: data.genera.find((entry) => entry.language.name === "en")?.genus,
+    habitat: data.habitat?.name,
+    evolutionsUrl: data.evolution_chain.url,
   };
-}
+};

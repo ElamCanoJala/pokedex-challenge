@@ -1,0 +1,31 @@
+.stat-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.stat-label {
+  width: 20%;
+  font-weight: 700;
+}
+
+.stat-number {
+  width: 20%;
+  text-align: right;
+  padding-right: 1rem;
+  color: var(--gray);
+}
+
+.percentage-bar {
+  width: 60%;
+  height: 0.5rem;
+  background-color: #eee;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.percentage-fill {
+  height: 100%;
+  background-color: rgb(36, 172, 36);
+}

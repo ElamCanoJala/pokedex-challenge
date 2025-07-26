@@ -10,9 +10,9 @@ const PokemonStatsDetail = ({ pokemon }) => {
       <h3 className="poke-number">#{pokemon.id.toString().padStart(3, "0")}</h3>
       <h1 className="poke-name">{capitalize(pokemon.name)}</h1>
       <ul className="types-list">
-        {pokemon.types.map((element) => {
+        {pokemon.types.map((element, index) => {
           const { typeColor, image } = getTypeStyle(element.type.name);
-          return <TypeIcon color={typeColor} img={image} key={element.type} />;
+          return <TypeIcon color={typeColor} img={image} key={index} />;
         })}
       </ul>
       <DetailSection pokemon={pokemon} />
